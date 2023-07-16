@@ -13,7 +13,7 @@ resource "aws_ecs_task_definition" "app_def" {
   container_definitions = <<JSON
   [
     {
-      "name": "app",
+      "name": "${var.project}-${var.environment}",
       "image": "${var.account}.dkr.ecr.us-east-1.amazonaws.com/golang-fargate_tf:latest",
       "essential": true,
       "cpu": 256,
@@ -30,7 +30,7 @@ resource "aws_ecs_task_definition" "app_def" {
         {
           "name": "ENV2",
           "value": "Good Afternoon"
-        },
+        }
       ],
       "logConfiguration": {
         "logDriver": "awslogs",

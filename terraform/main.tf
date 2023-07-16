@@ -33,15 +33,3 @@ variable "environment" {
 variable "account" {
   type = string
 }
-
-variable "shot-batch-vcpu" {
-  type = string
-}
-
-variable "shot-batch-image" {
-  type = string
-}
-
-variable "scheduling-batch-interval" {
-  type = string
-}
